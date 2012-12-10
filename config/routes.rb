@@ -9,6 +9,9 @@ Blitzen::Application.routes.draw do
 
   devise_scope :user do
     root to: 'devise/sessions#new'
+    get 'login', to: 'devise/sessions#new'
+    get 'logout', to: 'devise/sessions#destroy'
+    get 'signup', to: 'devise/registrations#new'
   end
 
   # The priority is based upon order of creation:
