@@ -7,6 +7,24 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 
+gem 'devise', '~> 2.1.2'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.12.0'
+  gem 'guard-rspec', '~> 2.3.1'
+  gem 'rb-fsevent', '~> 0.9.2', require: false
+end
+
+group :test do
+  gem 'capybara', '~> 2.0.1'
+  gem 'launchy', '~> 2.1.2'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
