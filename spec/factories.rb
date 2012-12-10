@@ -8,4 +8,20 @@ FactoryGirl.define do
     name
     password "foobar"
   end
+
+  factory :recipient do
+    name
+  end
+
+  factory :present do
+    user
+    recipient
+    sequence(:product) { |n| "Product #{n}" }
+    cost 9.95
+    store 'Amazon'
+    purchased false
+    delivered false
+    given false
+    split false
+  end
 end

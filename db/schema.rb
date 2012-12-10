@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210042135) do
+ActiveRecord::Schema.define(:version => 20121210135719) do
+
+  create_table "presents", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "recipient_id"
+    t.string   "product"
+    t.float    "cost"
+    t.string   "store"
+    t.boolean  "purchased"
+    t.boolean  "delivered"
+    t.boolean  "given"
+    t.boolean  "split"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "presents", ["recipient_id"], :name => "index_presents_on_recipient_id"
+  add_index "presents", ["user_id"], :name => "index_presents_on_user_id"
+
+  create_table "recipients", :force => true do |t|
+    t.integer  "present_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "recipients", ["present_id"], :name => "index_recipients_on_present_id"
 
   create_table "users", :force => true do |t|
     t.datetime "created_at",                             :null => false
