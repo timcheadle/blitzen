@@ -1,7 +1,15 @@
 Blitzen::Application.routes.draw do
-  root to: 'home#index'
-
   get "home/index"
+
+  devise_for :users
+
+  authenticated :user do
+    root to: 'presents#index'
+  end
+
+  devise_scope :user do
+    root to: 'devise/sessions#new'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
