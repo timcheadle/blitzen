@@ -17,6 +17,7 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.12.0'
   gem 'guard-rspec', '~> 2.3.1'
+  gem 'rb-readline', '~> 0.4.2'
   gem 'rb-fsevent', '~> 0.9.2', require: false
 end
 

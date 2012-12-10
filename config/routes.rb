@@ -14,6 +14,8 @@ Blitzen::Application.routes.draw do
     get 'signup', to: 'devise/registrations#new'
   end
 
+  resources :presents
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

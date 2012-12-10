@@ -1,0 +1,7 @@
+<% provide(:title, 'Presents')%>
+
+<ul>
+<% @presents.each do |present| %>
+  <li><%= present.product %></li>
+<% end %>
+</ul>
