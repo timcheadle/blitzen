@@ -1,0 +1,6 @@
+<%= form_for @present, remote: true do |f| %>
+  <%= f.label :product %>
+  <%= f.text_field :product %>
+
+  <%= f.submit 'Add Present', class: 'btn' %>
+<% end %>

@@ -13,4 +13,17 @@ describe 'Present pages' do
 
     it { should have_selector('title', text: full_title('Presents')) }
   end
+
+  describe 'create' do
+    let(:present) { FactoryGirl.build(:present) }
+
+    before do
+      as_user(user).visit root_path
+      click_link 'Add Present'
+      fill_in :product, with: present.product
+      click_button 'Add Present'
+    end
+
+    it { should have_selector('li', text: present.product) }
+  end
 end

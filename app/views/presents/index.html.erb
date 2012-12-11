@@ -1,7 +1,7 @@
 <% provide(:title, 'Presents')%>
 
-<ul>
-<% @presents.each do |present| %>
-  <li><%= present.product %></li>
-<% end %>
+<ul id="presents">
+  <%= render @presents %>
 </ul>
+
+<%= link_to 'Add Present', new_present_path, id: 'new_link', remote: true %>
